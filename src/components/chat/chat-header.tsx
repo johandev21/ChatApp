@@ -1,8 +1,9 @@
 import { X } from "lucide-react";
+import { Button } from "../ui/button";
 
 export default function ChatHeader() {
   return (
-    <div className="z-10 w-full flex justify-between items-center p-2 bg-[#E2E2FF]/5 backdrop-blur-3xl border-b border-b-inherit/5">
+    <div className="z-10 fixed top-0 inset-x-0 h-16 w-full flex justify-between items-center p-2 bg-[#E2E2FF]/5 backdrop-blur-3xl border-b border-b-inherit/5">
       <div className="flex items-center gap-1.5">
         {/* <UserIcon /> */}
         <div className="size-12 rounded-full bg-gray-800"></div>
@@ -14,7 +15,9 @@ export default function ChatHeader() {
         </div>
       </div>
       {/* <CloseChat /> */}
-      <X className="cursor-pointer text-[#686A75]"/>
+      <Button size="icon" variant="ghost" className="rounded-full">
+        <X/>
+      </Button>
       <div className="absolute rounded-full -top-2.5 left-1 bg-[#36373D]/50 size-32 blur-2xl -z-10"></div>
       <div className="absolute rounded-full -top-8 -right-1.5 bg-[#1A1B20]/70 size-44 blur-2xl -z-10"></div>
     </div>

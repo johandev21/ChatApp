@@ -36,7 +36,7 @@ export default function RootLayout({
                 <Footer />
               </SignedOut>
               <SignedIn>
-                <UserButton />
+                {/* <UserButton /> */}
               </SignedIn>
               {children}
             </ThemeProvider>
