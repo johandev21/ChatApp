@@ -14,13 +14,15 @@ export function ContactMessage({
   return (
     <div
       className={`relative inline-block py-1.5 px-3 pb-5 max-w-[65%] w-fit rounded-[var(--chat-message-radius)] mt-3 ${
-        isCurrentUser ? "bg-[#212530]/90 ml-auto" : "bg-[#2c2e33]/90"
+        isCurrentUser ? "bg-primary/20 ml-auto" : "bg-primary/10"
       }`}
     >
       <span className="text-sm">{text}</span>
-      <span className="text-xs absolute right-2 bottom-1.5 text-gray-400">
-        {timestamp}
-      </span>
+      <div>
+        <span className="text-xs absolute right-2 bottom-1.5 text-foreground/80">
+          {timestamp}
+        </span>
+      </div>
     </div>
   );
 }
@@ -44,7 +46,7 @@ export function GroupMessage({
     >
       {/* Avatar only if not current user */}
       {!isCurrentUser && (
-        <div className="w-8 h-8 rounded-full bg-gray-800 flex-shrink-0 overflow-hidden">
+        <div className="w-8 h-8 rounded-full bg-card flex-shrink-0 overflow-hidden">
           {avatarUrl && (
             <img
               src={avatarUrl}
@@ -61,9 +63,11 @@ export function GroupMessage({
         }`}
       >
         <span className="text-sm">{text}</span>
-        <span className="text-xs absolute right-2 bottom-1.5 text-gray-400">
-          {timestamp}
-        </span>
+        <div>
+          <span className="text-xs absolute right-2 bottom-1.5 text-gray-400">
+            {timestamp}
+          </span>
+        </div>
       </div>
     </div>
   );
