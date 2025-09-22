@@ -1,6 +1,7 @@
 "use client";
 
 import ChatLayout from "@/components/chat/chat-layout";
+import SidebarLayout from "@/components/sidebar/sidebar-layout";
 import { useUser } from "@clerk/nextjs";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
   }
 
   return <div>
-    <ChatLayout />
+    <SidebarLayout />
+    {/* <ChatLayout /> */}
   </div>;
 }
