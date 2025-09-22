@@ -1,4 +1,5 @@
 import SidebarChatListItem, { Chat } from "./sidebar-chat-list-item";
+import SidebarHeader from "./sidebar-header";
 
 const chatData: Chat[] = [
   {
@@ -92,12 +93,15 @@ const chatData: Chat[] = [
 ];
 
 
-export default function SidebarChatList() {
+export default function SidebarChatLayout() {
   return (
-    <div className="flex flex-col mt-[166px] mb-[90px] px-1">
-      {chatData.map((chat) => (
-        <SidebarChatListItem key={chat.id} {...chat} />
-      ))}
-    </div>
+    <>
+      <SidebarHeader />
+      <div className="flex flex-col mt-[166px] mb-[90px] px-1">
+        {chatData.map((chat) => (
+          <SidebarChatListItem key={chat.id} {...chat} />
+        ))}
+      </div>
+    </>
   )
 }

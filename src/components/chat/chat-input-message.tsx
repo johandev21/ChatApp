@@ -13,14 +13,12 @@ export default function InputMessage() {
       el.style.height = "auto"
       el.style.height = `${Math.min(el.scrollHeight, 160)}px`
     }
-    // Update the CSS variable on the body
     if (inputContainerRef.current) {
       document.documentElement.style.setProperty('--input-height', `${inputContainerRef.current.offsetHeight}px`);
     }
   }
 
   useEffect(() => {
-    // Initial height calculation
     updateInputHeight();
   }, []);
 
