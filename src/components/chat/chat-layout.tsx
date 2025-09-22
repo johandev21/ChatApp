@@ -1,11 +1,17 @@
 import ChatHeader from "./chat-header";
 import InputMessage from "./chat-input-message";
 import ListChatMessages from "./list-chat-messages";
+import { Chat } from "../sidebar/sidebar-chat-list-item";
 
-export default function ChatLayout() {
+interface ChatLayoutProps {
+  chat: Chat;
+  onClose: () => void;
+}
+
+export default function ChatLayout({ chat, onClose }: ChatLayoutProps) {
   return (
     <div className="h-screen flex flex-col">
-      <ChatHeader />
+      <ChatHeader chat={chat} onClose={onClose} />
 
       <div className="flex-1 overflow-y-auto mt-16" style={{ paddingBottom: 'calc(var(--input-height) + 40px)' }}>
         <ListChatMessages />

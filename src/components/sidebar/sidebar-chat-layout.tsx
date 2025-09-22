@@ -92,16 +92,21 @@ const chatData: Chat[] = [
   },
 ];
 
+interface SidebarChatLayoutProps {
+  onSelectChat: (chat: Chat) => void;
+}
 
-export default function SidebarChatLayout() {
+export default function SidebarChatLayout({ onSelectChat }: SidebarChatLayoutProps) {
   return (
     <>
       <SidebarHeader />
       <div className="flex flex-col mt-[166px] mb-[90px] px-1">
         {chatData.map((chat) => (
-          <SidebarChatListItem key={chat.id} {...chat} />
+          <div key={chat.id} onClick={() => onSelectChat(chat)}>
+            <SidebarChatListItem {...chat} />
+          </div>
         ))}
       </div>
     </>
-  )
+  );
 }
